@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+{% load static %}
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>{% block title %} {% endblock title %}</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/images/favicon.svg'%}" />
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- Web Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/LineIcons.2.0.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/animate.css'%}" />
+    <link rel="stylesheet" href="{% static 'assets/css/tiny-slider.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/glightbox.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- /End Preloader -->
+
+    <!-- Start Header Area -->
+    <header class="header navbar-area">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <div class="nav-inner">
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand" href="{% url 'home'%}">
+                                <img src="{% static 'assets/images/logo/logo.svg' %}" alt="Logo">
+                            </a>
+                            <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <ul id="nav" class="navbar-nav ms-auto">
+                                    <li class="nav-item">
+                                        <a class=" active dd-menu collapsed" href="{% static 'home' %}"
+                                            data-bs-toggle="collapse" data-bs-target="#submenu-1-1"
+                                            aria-controls="navbarSupportedContent" aria-expanded="false"
+                                            aria-label="Toggle navigation">Home</a>
+                                        <ul class="sub-menu collapse" id="submenu-1-1">
+                                            <li class="nav-item active"><a href="{% url 'home' %}">Back to Home</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{% url 'about_us'%}" aria-label="Toggle navigation" >About_us</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class=" dd-menu collapsed" href="javascript:void(0)"
+                                            data-bs-toggle="collapse" data-bs-target="#submenu-1-3"
+                                            aria-controls="navbarSupportedContent" aria-expanded="false"
+                                            aria-label="Toggle navigation">Courses</a>
+                                        <ul class="sub-menu collapse" id="submenu-1-3">
+                                            <li class="nav-item"><a href="{% url 'python_course' %}">Python Programming</a></li>
+                                            <li class="nav-item"><a href="{% url 'dj_course' %}">Django Web Development</a></li>
+                                            <li class="nav-item"><a href="{% url 'ml_course' %}">Machine Learning</a></li>
+                                            <li class="nav-item"><a href="{% url 'dl_course' %}">Deep Learning</a></li>
+                                            <li class="nav-item"><a href="{% url 'stat_course' %}">Statistics & Data Science</a></li>
+                                            <li class="nav-item"><a href="{% url 'data_analysis_course' %}">Data Analysis</a></li>
+                                            <li class="nav-item"><a href="{% url 'big_data_course' %}">Big Data Engineering</a></li>
+                                            <li class="nav-item"><a href="javascript:void(0)">Cloud Computing</a></li>
+                                            <li class="nav-item"><a href="javascript:void(0)">Project Management</a></li>
+                                            <li class="nav-item"><a href="javascript:void(0)">SQL</a></li>
+                                        </ul>
+                                    </li>
+                                    
+                                    <li class="nav-item">
+                                        <a class=" dd-menu collapsed" href="javascript:void(0)"
+                                            data-bs-toggle="collapse" data-bs-target="#submenu-1-5"
+                                            aria-controls="navbarSupportedContent" aria-expanded="false"
+                                            aria-label="Toggle navigation">Blog</a>
+                                        <!--<ul class="sub-menu collapse" id="submenu-1-5">
+                                            <li class="nav-item"><a href="javascript:void(0)">Blog Grid Sidebar</a>
+                                            </li>
+                                            <li class="nav-item"><a href="javascript:void(0)">Blog Single</a></li>
+                                            <li class="nav-item"><a href="javascript:void(0)">Blog Single
+                                                    Sibebar</a></li>
+                                        </ul>-->
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class=" dd-menu collapsed" href="javascript:void(0)"
+                                            data-bs-toggle="collapse" data-bs-target="#submenu-1-4"
+                                            aria-controls="navbarSupportedContent" aria-expanded="false"
+                                            aria-label="Toggle navigation">My Profile</a>
+                                        <ul class="sub-menu mega-menu collapse" id="submenu-1-4">
+                                            
+                                            <li class="single-block">
+                                                <ul>
+                                                    <li class="mega-menu-title">Profile</li>
+                                                    <li class="nav-item"><a href="javascript:void(0)">Account Overview</a>
+                                                    </li>
+                                                    <li class="nav-item"><a href="javascript:void(0)">My Profile</a>
+                                                    </li>
+                                                    <li class="nav-item"><a href="javascript:void(0)">setting account</a></li>
+                                                    <li class="nav-item"><a href="javascript:void(0)">Favorite course</a>
+                                                    </li>
+                                                    
+                                                    <li class="nav-item"><a href="javascript:void(0)">Messages</a></li>
+                                                    <li class="nav-item"><a href="javascript:void(0)">Close account</a>
+                                                    </li>
+                                                    <li class="nav-item"><a href="javascript:void(0)">Logout</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div> <!-- navbar collapse -->
+                            <div class="login-button">
+                                <ul>
+                                    <li>
+                                        <a href="javascript:void(0)"><i class="lni lni-enter"></i> Login</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)"><i class="lni lni-user"></i> Register</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="button header-button">
+                                <a href="javascript:void(0)" class="btn">Live chat</a>
+                            </div>
+                        </nav> <!-- navbar -->
+                    </div>
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </header>
+    <!-- End Header Area -->
+
+    {% block content %}
+
+    {% endblock content %}
+
+    <!-- Start Footer Area -->
+    <footer class="footer">
+        <!-- Start Footer Top -->
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <!-- Single Widget -->
+                        <div class="single-footer mobile-app">
+                            <h3>Mobile Apps</h3>
+                            <div class="app-button">
+                                <a href="javascript:void(0)" class="btn">
+                                    <i class="lni lni-play-store"></i>
+                                    <span class="text">
+                                        <span class="small-text">Get It On</span>
+                                        Google Play
+                                    </span>
+                                </a>
+                                <a href="javascript:void(0)" class="btn">
+                                    <i class="lni lni-apple"></i>
+                                    <span class="text">
+                                        <span class="small-text">Get It On</span>
+                                        App Store
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- End Single Widget -->
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <!-- Single Widget -->
+                        <div class="single-footer f-link">
+                            <h3>Locations</h3>
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-12">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Dhaka</a></li>
+                                        <li><a href="javascript:void(0)">Chittagong</a></li>
+                                        <li><a href="javascript:void(0)">Khulna</a></li>
+                                        <li><a href="javascript:void(0)">Rajshahi</a></li>
+                                        <li><a href="javascript:void(0)">Mymansing</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-12">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Kurigram</a></li>
+                                        <li><a href="javascript:void(0)">Sherpur</a></li>
+                                        <li><a href="javascript:void(0)">Jessore</a></li>
+                                        <li><a href="javascript:void(0)">Magura</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Single Widget -->
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <!-- Single Widget -->
+                        <div class="single-footer f-link">
+                            <h3>Quick Links</h3>
+                            <ul>
+                                <li><a href="{% url 'about_us' %}">About Us</a></li>
+                                <li><a href="javascript:void(0)">How It's Works</a></li>
+                                <li><a href="javascript:void(0)">Login</a></li>
+                                <li><a href="javascript:void(0)">Signup</a></li>
+                                <li><a href="javascript:void(0)">Help & Support</a></li>
+                            </ul>
+                        </div>
+                        <!-- End Single Widget -->
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <!-- Single Widget -->
+                        <div class="single-footer f-contact">
+                            <h3>Contact</h3>
+                            <ul>
+                                <li>23 New market, daksshin city 10<br> Airport uttara, Bangladesh</li>
+                                <li>Tel. +(123) 12345678 <br> Mail. aiquest@gmail.com</li>
+                            </ul>
+                        </div>
+                        <!-- End Single Widget -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/ End Footer Middle -->
+        <!-- Start Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="inner">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="content">
+                                <ul class="footer-bottom-links">
+                                    <li><a href="javascript:void(0)">Terms of use</a></li>
+                                    <li><a href="javascript:void(0)"> Privacy Policy</a></li>
+                                    <li><a href="javascript:void(0)">Advanced Search</a></li>
+                                    <li><a href="javascript:void(0)">Site Map</a></li>
+                                    <li><a href="javascript:void(0)">Information</a></li>
+                                </ul>
+                                <p class="copyright-text">Designed and Developed by <a href="https://github.com/emumia/Md-Mohaiminul-Islam-Imran"
+                                        rel="nofollow" target="_blank">MD Mohaiminul Islam Imran</a>
+                                </p>
+                                <ul class="footer-social">
+                                    <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
+                                    <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
+                                    <li><a href="javascript:void(0)"><i class="lni lni-youtube"></i></a></li>
+                                    <li><a href="javascript:void(0)"><i class="lni lni-linkedin-original"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Middle -->
+    </footer>
+    <!--/ End Footer Area -->
+
+    <!-- ========================= scroll-top ========================= -->
+    <a href="#" class="scroll-top btn-hover">
+        <i class="lni lni-chevron-up"></i>
+    </a>
+
+    <!-- ========================= JS here ========================= -->
+    <script src="{% static 'assets/js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'assets/js/wow.min.js' %}"></script>
+    <script src="{% static 'assets/js/tiny-slider.js' %}"></script>
+    <script src="{% static 'assets/js/glightbox.min.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+    <script type="text/javascript">
+        //========= Category Slider 
+        tns({
+            container: '.category-slider',
+            items: 3,
+            slideBy: 'page',
+            autoplay: false,
+            mouseDrag: true,
+            gutter: 0,
+            nav: false,
+            controls: true,
+            controlsText: ['<i class="lni lni-chevron-left"></i>', '<i class="lni lni-chevron-right"></i>'],
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                540: {
+                    items: 2,
+                },
+                768: {
+                    items: 4,
+                },
+                992: {
+                    items: 5,
+                },
+                1170: {
+                    items: 6,
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
